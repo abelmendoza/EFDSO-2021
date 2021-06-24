@@ -11,7 +11,9 @@ namespace ApiVentas.Models
             [Key]
             public int id { get; set; }
             public int usuarioId { get; set; }
-            public int nombre { get; set; }
+            public Usuario usuario { get; set; }
+
+            public string nombre { get; set; }
             public string precio { get; set; }
             public string descripcion { get; set; }
             public string marca { get; set; }

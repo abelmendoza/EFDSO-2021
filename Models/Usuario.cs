@@ -10,8 +10,8 @@ namespace ApiVentas.Models
     {
         [Key]
         public int id { get; set; }
-        public int correo { get; set; }
-        public int password { get; set; }
+        public string correo { get; set; }
+        public string password { get; set; }
         public string username { get; set; }
         public bool estado { get; set; }
 

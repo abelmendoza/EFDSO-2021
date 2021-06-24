@@ -25,7 +25,7 @@ namespace ApiVentas.Controllers
         {
             try
             {
-                return Ok(_context.producto.ToList());
+                return Ok(_context.producto.Include(p => p.usuario).ToList());
             }
             catch (Exception ex)
             {
@@ -37,7 +37,7 @@ namespace ApiVentas.Controllers
         {
             try
             {
-                var producto = _context.producto.FirstOrDefault(p => p.id == id);
+                var producto = _context.producto.Include(p => p.usuario).FirstOrDefault(p => p.id == id);
                 return Ok(producto);
             }
             catch (Exception ex)
