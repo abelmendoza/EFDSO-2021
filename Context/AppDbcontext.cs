@@ -9,7 +9,7 @@ namespace ApiVentas.Context
 {
     public class AppDbcontext : DbContext
     {
-        public AppDbcontext(DbContextOptions<AppDbcontext> options)
+        public AppDbcontext(DbContextOptions<AppDbcontext> options) : base(options)
         {
 
         }
