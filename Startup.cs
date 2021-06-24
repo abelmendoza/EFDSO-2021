@@ -10,6 +10,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using ApiVentas.Context;
+using Microsoft.EntityFrameworkCore.SqlServer;
+
 
 namespace ApiVentas
 {
@@ -26,6 +30,7 @@ namespace ApiVentas
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddDbContext<AppDbcontext>(options => options.UseSqlServer(Configuration.GetConnectionString("sqlServer")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
